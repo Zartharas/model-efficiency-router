@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model Efficiency Router"
+  short_description: "Forecast complexity and route model usage"
+  default_prompt: "Use $model-efficiency-router throughout this project to recommend model changes before the next task."
