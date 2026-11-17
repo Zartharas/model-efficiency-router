@@ -18,6 +18,21 @@ Use an existing user preference when one is available. Otherwise define these ro
 
 Model names, entitlements, and reasoning controls change. Resolve them from the current interface or official product documentation. If they cannot be verified, recommend the role rather than guessing a model name. Never recommend unavailable controls.
 
+For OpenAI names and retirement status, treat ChatGPT Chat, ChatGPT Work, Codex app/CLI/IDE, and API as separate surfaces. Verify the user's current surface and visible picker first. Use current official OpenAI documentation for lifecycle or migration questions. Never assume an API model ID is selectable in ChatGPT or Codex.
+
+### Current OpenAI mapping (dated 2026-11-17)
+
+Use this only as a starting map; verify availability and status before recommending a named model:
+
+- **GPT-6 Luna:** economical tier for focused, cost-sensitive work where exposed.
+- **GPT-6.1 Terra:** efficient balanced tier for clear, routine work, visual reasoning, and precise computer use where exposed.
+- **GPT-6.1 Sol:** balanced-to-strong tier for coding and agentic work where exposed.
+- **GPT-6 Astra:** flagship tier for demanding work; use only when the host offers it and the task warrants it.
+- **GPT-6.2 Astra/Sol:** may appear in Work or Codex rollouts; do not assume access.
+- **GPT-5.6 Sol/Terra/Luna:** compatibility or fallback choices when still exposed by the surface.
+
+ChatGPT Chat and Work/Codex may have different pickers. GPT-6 Chat is rolling out by plan; GPT-6.1 Terra is a Work/Codex option, not a standard Chat option; GPT-6.1 Sol and GPT-6.2 variants may be separately exposed in Work/Codex. Current plans and rollout can change, so the visible picker wins.
+
 ## Assess at task boundaries
 
 Assess silently at these points:
@@ -54,6 +69,15 @@ Apply these overrides:
 - Use the Complex tier when the next task requires reconciling several uncertain sources, tracing nonlocal behavior, choosing an architecture, or recovering from repeated failed approaches.
 - Keep the Baseline tier for repository exploration, reading, searches, mechanical edits, formatting, straightforward tests, dependency inventory, well-specified refactors, and routine documentation.
 - Do not escalate merely because a task is large. Prefer Terra when the work is repetitive, well specified, and easily verified.
+
+### Lifecycle and migration
+
+- Distinguish **available**, **deprecated**, **shut down/retired**, and **unknown**. Never recommend deprecated or shut-down models for new work; use them only for compatibility or historical comparison.
+- When an old model is unavailable, preserve the workflow role and effective effort as the baseline, then recommend a verified current alternative. State the mapping; do not silently substitute.
+- For an upgrade claim, compare the same representative task across candidates. Consider success, correctness, validation, latency, token/usage data, and cost when exposed. A newer name alone is not evidence of improvement.
+- Reasoning levels are model- and surface-specific. Preserve the old effective effort only where supported; otherwise choose the nearest supported level and identify the change. Do not treat `low`, `medium`, `high`, `xhigh`, `max`, Instant, Thinking, Extra High, or Pro as interchangeable across products.
+- Recheck status for migration tasks and when a model is reported deprecated; avoid repeated checks during an unchanged phase.
+- Official references: [ChatGPT model availability](https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt), [API model catalog](https://developers.openai.com/api/docs/models), [all models and lifecycle](https://developers.openai.com/api/docs/models/all), [model guidance](https://developers.openai.com/api/docs/guides/latest-model).
 
 ## Avoid wasteful switching
 
